@@ -9,12 +9,16 @@ function kk(){
 # aliases
 alias reload='source ~/.zshrc'
 alias gca='git commit -a'
-alias ac='git commit -a --no-edit'
-alias acc='git commit --no-edit'
+alias ac='git commit -a --amend --no-edit'
+alias acc='git commit --amend --no-edit'
 alias ga='git add'
 alias grsh='git reset --hard'
 alias gc='git commit'
 alias gg='grep -nri'
+alias gs='git status'
+
+# instant deployment
+alias vv='vim ~/dotfiles/zshrc; cd ~/dotfiles/; ./install.sh; reload'
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
