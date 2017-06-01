@@ -16,11 +16,11 @@ alias grsh='git reset --hard'
 alias gc='git commit'
 alias gg='grep -nri'
 
-source ~/.hidden.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fasd --init auto)"
 
+source ~/.hidden.zsh
 
 # stolen from https://gist.github.com/matthewmccullough/787142
 HISTSIZE=5000               #How many lines of history to keep in memory
