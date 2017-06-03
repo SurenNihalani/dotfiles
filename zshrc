@@ -1,6 +1,7 @@
 PROMPT='
 %B%~%b
 '
+setopt prompt_subst
 autoload -Uz vcs_info
 precmd () { vcs_info }
 zstyle ':vcs_info:git*' formats "%b %a %m"
