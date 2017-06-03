@@ -19,7 +19,7 @@ rm -rf 1.0.1
 cd clvv-fasd*
 # it'd be useful to install for everyone 
 # but it's worth dealing with permission stuff
-PREFIX=$HOME make install
+sudo make install
 cd ..
 rm -rf clvv*
 
