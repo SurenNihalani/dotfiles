@@ -23,4 +23,5 @@ sudo make install
 cd ..
 rm -rf clvv*
 
-
+rm -rf ~/.vimrc
+cp vimrc ~/.vimrc
