@@ -20,7 +20,11 @@ filetype plugin on
 autocmd FileType python,js autocmd BufWritePre <buffer> %s/\s\+$//e
 set noswapfile
 
-
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 let mapleader = " "
 " vim-argwrap settings
@@ -50,7 +54,7 @@ set ttymouse=xterm2
 
 
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 
 
 set encoding=utf-8
