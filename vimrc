@@ -23,6 +23,8 @@ set noswapfile
 set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
+" https://stackoverflow.com/questions/4151448/spaces-as-tabs-and-backspace-behavior-in-vim
+set softtabstop=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
@@ -46,8 +48,13 @@ set splitright
 
 set wildmenu
 set wildmode=list:longest,full
+set colorcolumn=100
 
-
+let g:indent_guides_enable_on_vim_startup = 1 
+let g:indent_guides_auto_colors = 0 
+let g:indent_guides_guide_size = 1 
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=darkgrey ctermbg=252
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=251
 
 set mouse=a
 set ttymouse=xterm2
