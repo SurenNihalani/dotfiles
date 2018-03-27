@@ -1,5 +1,6 @@
 #!/bin/bash
 set -x
+OLDDIR = `pwd`
 
 # install ag
 sudo apt-get install silversearcher-ag
@@ -13,9 +14,12 @@ rm -rf ~/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 yes | ~/.fzf/install
 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+rm -rf ~/.vimrc
+cp vimrc ~/.vimrc
 
 # fasd is game changer
-wget https://github.com/clvv/fasd/zipball/1.0.1
+curl -L -o a.zip https://github.com/clvv/fasd/zipball/1.0.1
 unzip 1.0.1
 rm -rf 1.0.1
 
@@ -26,6 +30,5 @@ sudo make install
 cd ..
 rm -rf clvv*
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-rm -rf ~/.vimrc
-cp vimrc ~/.vimrc
+cd $OLDDIR
+git clean -f -f -d
