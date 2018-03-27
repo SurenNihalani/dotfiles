@@ -6,7 +6,7 @@ autoload -Uz vcs_info
 precmd () { vcs_info }
 zstyle ':vcs_info:git*' formats "%b %a %m"
 PROMPT="
-%~ \$vcs_info_msg_0_
+%~ \$vcs_info_msg_0_ %M
 "
 
 autoload -U compinit
