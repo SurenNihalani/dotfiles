@@ -94,3 +94,4 @@ function check_last_exit_code() {
   fi
 }
 RPROMPT='$(check_last_exit_code)'
+export HISTTIMEFORMAT="%F %T "

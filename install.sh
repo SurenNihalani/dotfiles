@@ -32,3 +32,15 @@ rm -rf clvv*
 
 cd $OLDDIR
 git clean -f -f -d
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+rm -rf ~/.vimrc
+cp vimrc ~/.vimrc
+
+
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+
+sudo -sHE ansible-playbook main_playbook.yml -i 127.0.0.1,

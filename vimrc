@@ -13,6 +13,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'hdima/python-syntax'
+Plugin 'pearofducks/ansible-vim'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
