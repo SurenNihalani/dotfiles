@@ -59,6 +59,7 @@ alias grs='git rebase --skip'
 alias aa='cd ~/ans2/web/lib/a'
 alias gl='git log'
 alias VIM='vim -u NONE -N'
+alias puso='git pull --rebase && git push origin HEAD:master'
 
 # instant deployment
 alias vv='vim ~/dotfiles/zshrc; cd ~/dotfiles/; ./install.sh; reload'
