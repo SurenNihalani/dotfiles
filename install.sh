@@ -1,5 +1,7 @@
 #!/bin/bash
 set -xe
+cp git-message.txt ~/.gitmessage.txt
+git config --global commit.template ~/.gitmessage.txt
 OLDDIR=`pwd`
 
 # install ag
