@@ -102,3 +102,8 @@ function new_branch() {
     BRANCH_NAME="${WORD_ONE}_${WORD_TWO}"
     git checkout -b $BRANCH_NAME origin/master
 }
+
+fpath=(/Users/snihalan/.zsh/gradle-completion $fpath)
+
+alias puso='git pull --rebase && git push origin HEAD:master'
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
