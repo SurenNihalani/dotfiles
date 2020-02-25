@@ -5,7 +5,14 @@ git config --global commit.template ~/.gitmessage.txt
 OLDDIR=`pwd`
 
 # install ag
-sudo apt-get install silversearcher-ag
+if hash apt-get 2>/dev/null; then
+    sudo apt-get install silversearcher-ag
+    sudo apt-get update
+    sudo apt-get install software-properties-common
+    sudo apt-add-repository ppa:ansible/ansible -y
+    sudo apt-get update
+    sudo apt-get install ansible
+fi
 
 # on an average, setup should be reproducble
 rm -f ~/.zshrc
@@ -41,8 +48,3 @@ rm -rf ~/.vimrc
 cp vimrc ~/.vimrc
 
 
-sudo apt-get update
-sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:ansible/ansible -y
-sudo apt-get update
-sudo apt-get install ansible
