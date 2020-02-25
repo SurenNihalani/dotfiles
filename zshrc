@@ -97,8 +97,8 @@ function check_last_exit_code() {
 RPROMPT='$(check_last_exit_code)'
 export HISTTIMEFORMAT="%F %T "
 function new_branch() {
-    WORD_ONE=$(sort -R /usr/share/dict/words | head -1)
-    WORD_TWO=$(sort -R /usr/share/dict/words | head -1)
+    WORD_ONE=$(shuf -n1 /usr/share/dict/words | head -1)
+    WORD_TWO=$(shuf -n1 /usr/share/dict/words | head -1)
     BRANCH_NAME="${WORD_ONE}_${WORD_TWO}"
     git checkout -b $BRANCH_NAME origin/master
 }
