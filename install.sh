@@ -46,5 +46,6 @@ rm -rf ~/.vim/bundle/Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 rm -rf ~/.vimrc
 cp vimrc ~/.vimrc
-
-
+if ! az > /dev/null; then
+    brew update && brew install azure-cli
+fi
