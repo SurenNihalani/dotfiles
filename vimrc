@@ -76,3 +76,6 @@ set encoding=utf-8
 
 let g:ag_working_path_mode="r"
 let g:ag_prg="ag --column --follow --nogroup --path-to-agignore ~/.agignore --max-count 500 --all-text --stats"
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+
