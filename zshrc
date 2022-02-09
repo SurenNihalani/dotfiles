@@ -13,7 +13,6 @@ autoload -U compinit
 compinit
 setopt correctall
 
-
 function kk(){
     git checkout --track -b $1 origin/master
 }
@@ -26,7 +25,7 @@ alias acc='git commit --amend --no-edit'
 alias ga='git add'
 alias grsh='git reset --hard'
 alias gc='git commit'
-alias gg='grep -nri'
+alias gg='git grep'
 alias gs='git status'
 alias gld='git log --patch'
 alias g='git'
@@ -64,7 +63,6 @@ alias puso='git pull --rebase && git push origin HEAD:master'
 # instant deployment
 alias vv='vim ~/dotfiles/zshrc; cd ~/dotfiles/; ./install.sh; reload'
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fasd --init auto)"
 
@@ -82,7 +80,6 @@ setopt HIST_FIND_NO_DUPS
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_ignore_space
-
 
 function check_last_exit_code() {
   local LAST_EXIT_CODE=$?
@@ -107,3 +104,78 @@ fpath=(/Users/snihalan/.zsh/gradle-completion $fpath)
 
 alias puso='git pull --rebase && git push origin HEAD:master'
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+eval "$(direnv hook zsh)"
+
+export PATH="$HOME/.poetry/bin:/usr/local/Cellar/proj@7/7.2.1/bin/:$PATH"
+export LD_LIBRARY_PATH="/usr/local/Cellar/proj@7/7.2.1/include:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/usr/local/Cellar/proj@7/7.2.1//lib/pkgconfig:$PKG_CONFIG_PATH"
+
+
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
+
+. ~/.envrc-personal
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+
+
+. $HOME/.asdf/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
+
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include $CPPFLAGS"
+
+export LDFLAGS="-L/usr/local/opt/openssl@3/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/openssl@3/include $CPPFLAGS"
+
+export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+  . /usr/local/opt/asdf/libexec/asdf.sh
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+export PATH="/usr/local/opt/python@3.6/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/python@3.6/lib"
+export PATH="/Users/suren/.local/bin:$PATH"
+export REQUESTS_CA_BUNDLE="/Users/suren/.asdf/installs/python/3.9.6/lib/python3.9/site-packages/certifi/cacert.pem"
+export PATH="/Users/suren/miniconda3/bin:/Users/suren/miniconda3/condabin:$PATH"
+
+export PATH="/usr/local/opt/bzip2/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/suren/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/suren/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/suren/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/suren/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+CERT_PATH=$(python -m certifi)
+export SSL_CERT_FILE=${CERT_PATH}
+export REQUESTS_CA_BUNDLE=${CERT_PATH}
+export PATH="/usr/local/opt/python@3.6/bin:$PATH"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete my-awesome-script)"
+export PIP_USE_DEPRECATED=html5lib
+./osx.zshrc

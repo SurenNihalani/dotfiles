@@ -49,3 +49,4 @@ cp vimrc ~/.vimrc
 if ! az > /dev/null; then
     brew update && brew install azure-cli
 fi
+./osx.zsh
