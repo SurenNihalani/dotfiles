@@ -62,6 +62,8 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder ~/Dropbox
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
 
+defaults write com.apple.screencapture disable-shadow -bool true
+
 # Set lock screen text
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText \
   "'Found this computer? Please contact Suren Nihalani @ suren@duck.com'"
