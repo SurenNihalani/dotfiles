@@ -75,5 +75,6 @@ hash -r
 saml2aws --version
 brew install --cask visual-studio-code
 brew install vim
-
-
+brew install libpq
+brew install postgresql
+brew install --cask spotify
