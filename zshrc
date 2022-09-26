@@ -147,7 +147,6 @@ export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
 export PATH="/usr/local/opt/python@3.6/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/python@3.6/lib"
 export PATH="/Users/suren/.local/bin:$PATH"
-export REQUESTS_CA_BUNDLE="/Users/suren/.asdf/installs/python/3.9.6/lib/python3.9/site-packages/certifi/cacert.pem"
 export PATH="/Users/suren/miniconda3/bin:/Users/suren/miniconda3/condabin:$PATH"
 
 export PATH="/usr/local/opt/bzip2/bin:$PATH"
@@ -166,7 +165,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-CERT_PATH=$(python -m certifi)
+python3 -m certifi || python3 -m pip install certifi
+CERT_PATH=$(python3 -m certifi)
 export SSL_CERT_FILE=${CERT_PATH}
 export REQUESTS_CA_BUNDLE=${CERT_PATH}
 export PATH="/usr/local/opt/python@3.6/bin:$PATH"
@@ -178,7 +178,6 @@ eval $(direnv hook zsh)
 autoload -U bashcompinit
 bashcompinit
 eval "$(register-python-argcomplete my-awesome-script)"
-export PIP_USE_DEPRECATED=html5lib
 ./osx.zshrc
 eval "$(saml2aws --completion-script-zsh)"
 

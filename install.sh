@@ -6,7 +6,8 @@ OLDDIR=`pwd`
 if [ ! -d $(readlink -f ~/.asdf) ]; then
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 fi
-
+touch ~/.hidden.zsh
+touch ~/.envrc-personal
 # install ag
 if hash apt-get 2>/dev/null; then
     sudo apt-get install silversearcher-ag

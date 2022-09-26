@@ -73,4 +73,7 @@ brew install awscli
 brew install saml2aws
 hash -r
 saml2aws --version
+brew install --cask visual-studio-code
+brew install vim
+
 
