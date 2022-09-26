@@ -3,12 +3,13 @@ set -xe
 cp git-message.txt ~/.gitmessage.txt
 git config --global commit.template ~/.gitmessage.txt
 OLDDIR=`pwd`
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 
 # install ag
 if hash apt-get 2>/dev/null; then
     sudo apt-get install silversearcher-ag
     sudo apt-get update
-    sudo apt-get install software-properties-common
+    sudo apt-get install software-properties-common curl git
     sudo apt-add-repository ppa:ansible/ansible -y
     sudo apt-get update
     sudo apt-get install ansible
@@ -48,5 +49,11 @@ rm -rf ~/.vimrc
 cp vimrc ~/.vimrc
 if ! az > /dev/null; then
     brew update && brew install azure-cli
+fi
+git config --global user.name "Suren Nihalani"
+git config --global user.email "1093911+SurenNihalani@users.noreply.github.com"
+FILE=$(readlink -f ~/.ssh/id_ed25519)
+if [ ! -f $FILE ]; then
+    ssh-keygen -t ed25519 -C "1093911+SurenNihalani@users.noreply.github.com"
 fi
 ./osx.zsh
