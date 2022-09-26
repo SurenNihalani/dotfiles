@@ -69,3 +69,8 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText \
   "'Found this computer? Please contact Suren Nihalani @ suren@duck.com'"
 brew install --cask bbedit
 brew install direnv
+brew install awscli
+brew install saml2aws
+hash -r
+saml2aws --version
+

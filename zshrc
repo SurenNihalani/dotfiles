@@ -180,3 +180,5 @@ bashcompinit
 eval "$(register-python-argcomplete my-awesome-script)"
 export PIP_USE_DEPRECATED=html5lib
 ./osx.zshrc
+eval "$(saml2aws --completion-script-zsh)"
+
