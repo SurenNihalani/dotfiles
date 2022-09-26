@@ -3,7 +3,9 @@ set -xe
 cp git-message.txt ~/.gitmessage.txt
 git config --global commit.template ~/.gitmessage.txt
 OLDDIR=`pwd`
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+if [ ! -d $(readlink -f ~/.asdf) ]; then
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+fi
 
 # install ag
 if hash apt-get 2>/dev/null; then

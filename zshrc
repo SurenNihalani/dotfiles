@@ -173,6 +173,7 @@ export PATH="/usr/local/opt/python@3.6/bin:$PATH"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
+. $HOME/.asdf/asdf.sh
 
 autoload -U bashcompinit
 bashcompinit
