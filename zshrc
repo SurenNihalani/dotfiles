@@ -174,7 +174,7 @@ export PATH="/usr/local/opt/python@3.6/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
 
 . $HOME/.asdf/asdf.sh
-
+eval $(direnv hook zsh)
 autoload -U bashcompinit
 bashcompinit
 eval "$(register-python-argcomplete my-awesome-script)"
