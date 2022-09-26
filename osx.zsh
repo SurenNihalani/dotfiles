@@ -68,3 +68,4 @@ defaults write com.apple.screencapture disable-shadow -bool true
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText \
   "'Found this computer? Please contact Suren Nihalani @ suren@duck.com'"
 brew install --cask bbedit
+brew install direnv
