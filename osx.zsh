@@ -78,3 +78,5 @@ brew install vim
 brew install libpq
 brew install postgresql
 brew install --cask spotify
+brew install coreutils
+brew install --cask discord
