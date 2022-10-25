@@ -80,3 +80,4 @@ brew install postgresql
 brew install --cask spotify
 brew install coreutils
 brew install --cask discord
+brew install docker --cask
