@@ -81,3 +81,5 @@ brew install --cask spotify
 brew install coreutils
 brew install --cask discord
 brew install docker --cask
+brew install --cask aws-vpn-client
+brew install --cask intellij-idea-ce
