@@ -180,4 +180,4 @@ bashcompinit
 eval "$(register-python-argcomplete my-awesome-script)"
 ./osx.zshrc
 eval "$(saml2aws --completion-script-zsh)"
-
+git config --global merge.conflictstyle zdiff3
