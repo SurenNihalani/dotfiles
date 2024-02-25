@@ -12,12 +12,11 @@ PROMPT="
 autoload -U compinit
 compinit
 setopt correctall
-
 function kk(){
-    git checkout --track -b $1 origin/master
+    git checkout --track -b $1 origin/master || git checkout --track -b $1 origin/main
 }
-
 # aliases
+SCRIPT_DIR=$(dirname $(readlink -f ~/.zshrc))
 alias reload='source ~/.zshrc'
 alias gca='git commit -a'
 alias ac='git commit -a --amend --no-edit'
@@ -104,7 +103,7 @@ fpath=(/Users/snihalan/.zsh/gradle-completion $fpath)
 
 alias puso='git pull --rebase && git push origin HEAD:master'
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
-
+2>/dev/null 1>/dev/null direnv || curl -sfL https://direnv.net/install.sh | bash
 eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.poetry/bin:/usr/local/Cellar/proj@7/7.2.1/bin/:$PATH"
@@ -126,7 +125,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
-
+[ ! -d "~/.asdf" ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 . $HOME/.asdf/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
@@ -140,7 +139,6 @@ export CPPFLAGS="-I/usr/local/opt/openssl@3/include $CPPFLAGS"
 
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
-  . /usr/local/opt/asdf/libexec/asdf.sh
 
 # added by Snowflake SnowSQL installer v1.2
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
@@ -165,7 +163,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-python3 -m certifi || python3 -m pip install certifi
+2>/dev/null 1>/dev/null python3 -m certifi || 2>/dev/null 1>/dev/null python3 -m pip install certifi
 CERT_PATH=$(python3 -m certifi)
 export SSL_CERT_FILE=${CERT_PATH}
 export REQUESTS_CA_BUNDLE=${CERT_PATH}
@@ -173,11 +171,10 @@ export PATH="/usr/local/opt/python@3.6/bin:$PATH"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-. $HOME/.asdf/asdf.sh
-eval $(direnv hook zsh)
 autoload -U bashcompinit
 bashcompinit
-eval "$(register-python-argcomplete my-awesome-script)"
-./osx.zshrc
-eval "$(saml2aws --completion-script-zsh)"
+# . $SCRIPT_DIR/osx.zsh
 git config --global merge.conflictstyle zdiff3
+2>/dev/null 1>/dev/null brew help || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+2>/dev/null 1>/dev/null brew install coreutils curl git
+export PATH="$PATH:/Applications/PyCharm.app/Contents/MacOS"
