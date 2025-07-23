@@ -1,6 +1,11 @@
 #!/bin/bash
 # vi:ft=sh
 # Adopted from https://github.com/mathiasbynens/dotfiles/blob/7d43ff6/.osx
+if [ "$(uname)" != "Darwin" ]; then
+  echo "This script is only for macOS"
+  exit 0
+fi
+
 set -e
 
 # Set a blazingly fast keyboard repeat rate
